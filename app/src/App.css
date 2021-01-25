@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.NavButton {
+  color: inherit;
+  text-decoration: none;
+  font-size: large;
+}
