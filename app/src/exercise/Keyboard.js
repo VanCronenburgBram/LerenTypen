@@ -41,11 +41,11 @@ export default class Toetsenbord extends Component {
   render() {
     return (
       <div>
-        <input
+        {/* <input
           value={this.state.input}
           placeholder={"Tap on the virtual keyboard to start"}
           onChange={this.onChangeInput}
-        />
+        /> */}
         <Keyboard
           keyboardRef={r => (this.keyboard = r)}
           layoutName={this.state.layoutName}

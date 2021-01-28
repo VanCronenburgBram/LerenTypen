@@ -20,8 +20,9 @@ router.get('/', (req, res) => {
 
 /* GET BY ID */
 router.post('/getById', (req, res) => {
-    var query = { id: req.body.id }
+    var query = { id: parseInt(req.body.id) }
     db.collection('characters').find(query).toArray((err, result) => {
+        console.log(result);
         if (err) return
         res.json(result)
     })
