@@ -1,19 +1,24 @@
 import React, { Component } from 'react'
-import Container from '@material-ui/core/Container';
+import { Container } from 'reactstrap';
 
-export default class ToType extends Component {
+export default class CharactersToType extends Component {
 
     charactersBefore() {
         var beforeList = "";
         for (var i = 0; i < this.props.test.key; i++) {
             beforeList += this.props.test.list[i];
         }
-        return <p>{beforeList}</p>
+        return <h3 className='first'>{beforeList}</h3>
     }
 
     currentCharacter() {
         var i = this.props.test.key;
-        return <p>{this.props.test.list[i]}</p>
+        if (this.props.test.isCorrect) {
+            return <h3 className='middle'>{this.props.test.list[i]}</h3>
+        }
+        else {
+            return <h3 className='incorrect-character'>{this.props.test.list[i]}</h3>
+        }
     }
 
     charactersAfter() {
@@ -21,16 +26,17 @@ export default class ToType extends Component {
         for (var i = this.props.test.key + 1; i < this.props.test.list.length; i++) {
             afterList += this.props.test.list[i];
         }
-        return <p>{afterList}</p>
+        return <h3 className='last'>{afterList}</h3>
     }
 
     render() {
         return (
-            <Container className='to-type'>
+            <div className='characters-to-type'>
+                <br/>
                 { this.charactersBefore()}
                 { this.currentCharacter()}
                 { this.charactersAfter()}
-            </Container>
+            </div>
         )
     }
 }
