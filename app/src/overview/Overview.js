@@ -31,7 +31,7 @@ export default class Overview extends Component {
 
     render() {
         return (
-            <Container className="table">
+            <Container>
                 { this.tableRows()}
             </Container>
         );
