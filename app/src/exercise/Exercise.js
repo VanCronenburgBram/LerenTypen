@@ -17,8 +17,7 @@ export default class Exercise extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: '1',
-            list: [],
+            characters: "",
             key: 0,
             layoutName: "azerty",
             isCorrect: true
@@ -26,9 +25,9 @@ export default class Exercise extends Component {
     }
 
     componentDidMount() {
-        axios.post('http://localhost:4000/servers/getById', { id: this.state.id })
+        axios.post('http://localhost:4000/servers/getById', { id: this.props.match.params.exercise })
             .then(response => {
-                this.setState({ list: response.data[0].list })
+                this.setState({ characters: response.data[0].list })
                 this.setState({ key: 0 })
             })
             .catch(function (error) {
@@ -41,14 +40,16 @@ export default class Exercise extends Component {
     };
 
     onChangeInput = character => {
-        const list = this.state.list;
+        const characters = this.state.characters;
         const key = this.state.key;
-        if (list.length > key) {
-            if (list[key] === character) {
+        if (characters.length > key) {
+            if(character === "space"){
+                character = " ";
+            }
+            if (characters[key] === character) {
                 var number = this.state.key + 1;
                 this.setState({ key: number });
                 this.setState({ isCorrect: true });
-                console.log(this.state.key)
             }
             else {
                 this.setState({ isCorrect: false });
@@ -61,14 +62,14 @@ export default class Exercise extends Component {
             <Container>
                 <Container className="layout">
                     <FormControl component="fieldset">
-                        <FormLabel component="legend">Indeling</FormLabel>
+                        <FormLabel component="legend">Toetsenbord indeling</FormLabel>
                         <RadioGroup aria-label="layout" value={this.state.layoutName} onChange={this.handleChangeLayout}>
-                            <FormControlLabel value="azerty" control={<Radio />} label="Azerty" />
-                            <FormControlLabel value="qwerty" control={<Radio />} label="Qwerty" />
+                            <FormControlLabel value="azerty" control={<Radio color="primary"/>} label="Azerty" />
+                            <FormControlLabel value="qwerty" control={<Radio color="primary"/>} label="Qwerty" />
                         </RadioGroup>
                     </FormControl>
                 </Container>
-                <CharactersToType test={{ list: this.state.list, key: this.state.key, isCorrect: this.state.isCorrect }} />
+                <CharactersToType value={{ characters: this.state.characters, key: this.state.key, isCorrect: this.state.isCorrect }} />
                 <KeyboardEventHandler
                     handleKeys={[
                         'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'space']}

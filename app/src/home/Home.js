@@ -1,17 +1,28 @@
-// import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
-// import AppBar from '@material-ui/core/AppBar';
-// import Toolbar from '@material-ui/core/Toolbar';
-// import Typography from '@material-ui/core/Typography';
-// import Button from '@material-ui/core/Button';
-// import IconButton from '@material-ui/core/IconButton';
-// import HomeIcon from '@material-ui/icons/Home';
-// import { BrowserRouter, Switch, Route, Link } from 'react-router-dom'
+import React, { Component } from 'react';
+import { Container } from 'reactstrap';
+import "./home.css";
+import typImg from "../images/Knipsel.PNG";
+import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
-// import Typing from '../exercise/Typing';
-
-export default function Home() {
-  return (
-      "Welkom op de home pagina."
-  );
+export default class Home extends Component {
+  render() {
+    return (
+      <Container>
+        <br />
+        <img className="image" src={typImg} alt="Leer om te typen" />
+        <Container className="text">
+          <h2>Welkom op onze leren typen website!</h2>
+          <p>Leer typen met 2 verschillende toetsenbordindelingen.</p>
+          <p>Op de overzicht pagina staan alle oefeningen.</p>
+          <br />
+          <Link className="nav-button" to='/overzicht'>
+            <Button variant="contained" color="primary">
+              Overzicht
+            </Button>
+          </Link>
+        </Container>
+      </Container>
+    );
+  }
 }
