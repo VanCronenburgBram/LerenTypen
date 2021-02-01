@@ -22,11 +22,6 @@ class App extends Component {
                   <HomeIcon />
                 </IconButton>
               </Link>
-              {/* <Link className="nav-button" to="/oefening/1">
-                <Button color="inherit">
-                  Oefening
-                </Button>
-              </Link> */}
               <Link className="nav-button" to="/overzicht">
                 <Button color="inherit">
                   Overzicht

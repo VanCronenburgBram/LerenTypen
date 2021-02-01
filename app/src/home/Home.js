@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 import "./home.css";
-import typImg from "../images/Knipsel.PNG";
+import typImg from "../images/LeerOmTeTypen.PNG";
 import { Link } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 
