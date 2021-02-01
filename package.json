@@ -18,8 +18,5 @@
   "bugs": {
     "url": "https://github.com/VanCronenburgBram/LerenTypen/issues"
   },
-  "homepage": "https://github.com/VanCronenburgBram/LerenTypen#readme",
-  "engines": {
-    "node": "12.13.1"
-  }
+  "homepage": "https://github.com/VanCronenburgBram/LerenTypen#readme"
 }
