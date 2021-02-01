@@ -1,0 +1,25 @@
+{
+  "name": "LerenTypen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cd server && npm install && npm start",
+    "heroku-postbuild": "cd app && npm install && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VanCronenburgBram/LerenTypen.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VanCronenburgBram/LerenTypen/issues"
+  },
+  "homepage": "https://github.com/VanCronenburgBram/LerenTypen#readme",
+  "engines": {
+    "node": "12.13.1"
+  }
+}

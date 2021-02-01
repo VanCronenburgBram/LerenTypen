@@ -25,7 +25,7 @@ export default class Exercise extends Component {
     }
 
     componentDidMount() {
-        axios.post('http://localhost:4000/servers/getById', { id: this.props.match.params.exercise })
+        axios.post('/servers/getById', { id: this.props.match.params.exercise })
             .then(response => {
                 this.setState({ characters: response.data[0].list })
                 this.setState({ key: 0 })

@@ -14,7 +14,7 @@ export default class Overview extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:4000/servers')
+        axios.get('/servers')
             .then(response => {
                 this.setState({ list: response.data })
             })
